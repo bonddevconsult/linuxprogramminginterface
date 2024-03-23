@@ -1,12 +1,12 @@
-# Chapter 1
+# Chapter 1: A "Brief" History
 
 ## Definitions
 
 - UNIX - a family of operating systems. There are, generally two definitions for UNIX in common use:
 
-1. Operating systems that have passed the official conformance tests for the "Single UNIX Specification" branded "UNIX" by **The Open Group**
+  1. Operating systems that have passed the official conformance tests for the "Single UNIX Specification" branded "UNIX" by **The Open Group**
 
-2. Operating systems that look and behave like *classical UNIX systems*(i.e., SystemV, Linux, and BSD)
+  2. Operating systems that look and behave like *classical UNIX systems*(i.e., SystemV, Linux, and BSD)
 
 - Linux - an operating system under th unix family of operating systems
 
@@ -17,9 +17,7 @@
 - Development was controlled by many groups both commercial and non-commercial
 - Implementations diverged over time, leading to stadndardization
 
-#### Additional Reading
-
-### Origins of unix system and the C programming language
+### Origins of UNIX system and the C programming language
 
 - First implementation of unix developed in 1969, written in assempler for a Digital PDP-7 minicom
 - UNIX is a pun on  MULTICS(Multiplexed information and computing service)
@@ -62,7 +60,7 @@
 - In 1985 Stallman started the Free Software Foundation to support the development of "free" software
 - The GNU project created the GNU General Public License which allows people to use their software  "freelly" as Stallman saw it
 - Free software projects created by GNU
-  - Emacs - a text editor [reference] (https://www.gnu.org/savannah-checkouts/gnu/emacs/emacs.html)
+  - Emacs - a text editor [reference](https://www.gnu.org/savannah-checkouts/gnu/emacs/emacs.html)
   - GCC - The GNU C Compiler Collection - [reference](https://gcc.gnu.org)
   - bash - the Bourne Again Shell - [reference](https://www.gnu.org/software/bash/)
   - glibc - the GNU C library - [reference](https://www.gnu.org/software/libc/)
