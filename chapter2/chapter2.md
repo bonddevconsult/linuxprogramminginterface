@@ -12,7 +12,7 @@
 8. **Virtual memory management** - a technique for organizing and allocating physical memmory into virtual memory
 9. **process** - a running program with access to CPU,memory, and file I/O
 10. **API** - Application Programming Interfaces
-11. **System Call** - Entrypoints for processes to request the kernel to perform kernel space tasks
+11. **System Call** - Entrypoints for user space processes to request the kernel to perform kernel space tasks
 12. **User space** - An area of virtual memory specifically for non-kernel processes
 13. **Kernel space** - An area of virtual memory specifically for kernel processes
 14. **user mode** - A CPU mode that only has access to user space memory
@@ -72,7 +72,7 @@
   a. where they are in RAM or if they're using swap space
   b where on disk, the files they access are 
 
-### What the kernel does
+### What the kernel does(kernel mode)
 
 1. knows and controls everything
 2. Facilitates the running of all processes
