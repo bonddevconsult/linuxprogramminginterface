@@ -21,6 +21,11 @@
 17. **swap [disk] space** - extra memory for the kernel to use if it runs out of RAM
 18. **login shell** - The process that is created to run a shell when the user first logs in
 19. **Shell scripts** - text files containing shell commands
+20. **single hierarchical directory structure** - A directory hierarchy where every directory is a child of the root directory
+21. **directory** - a file containing a table of filenames coupled with references to the related files
+22. **link** - aka hard link. The combination of a filename and a reference to the location of the data associated with that filename
+23. **symbolic link** - aka soft link. a file containing a filename-plus-reference entry, but, the pointer refers to the string name of another file
+24. **dangling link** - A symbolic link referring to a file that does not exist
 
 ## What Is The Kernel
 
@@ -103,3 +108,70 @@
 - Bourne Again Shell(bash): The GNU Project's reimplementation of the Bourne Shell. THe most widely used on linux. Alan's default
 
 ## Users and Groups
+
+- each user on the system has a unique id
+- each user **may** belong to groups
+- groups are useful for controlling administrative access to files and other system resources
+- Linux users may belong to multiple groups
+
+### User properties
+
+- `username` - login name
+- `uid` - user id. Number
+- Stored in `/etc/passwd`(the system password file)
+  - `/etc/passwd` has additional info
+    - **Group ID**: the numeric group ID of the first of the groups of which the user is a member
+    - **Home directory**: the inital directory into which the user is placed after logging in
+    - **Login shell**: the name of the program to be executed to interpret user commands
+    - may also include an encrypted password
+    - The password is normally stored in a separate *shadow password file*
+
+### Group Properties
+
+- `group name` - the unique name of the group
+- `group id` - the numeric ID assoc with the group
+- `User list` - Comma separated list of login names of users who are members of the group
+- stoed in `/etc/group`
+
+### Superuser Properties
+
+- `UID`: 0
+- `username`: root
+- The superuser has special priviliges within the system.
+- Passes all permission checks on a typical linux system
+- Can access any file and send signals to any user process
+
+## Directory Hierarchy
+
+- Kernel maintains a single hierarchical directory structure to organize **all** files on the system
+
+## File Types
+
+Each file within the filesysttem has a type
+
+1. `plain files` - aka `regular files`. Ordinary data files
+2. `devices`
+3. `pipes`
+4. `sockets`
+5. `directories`
+6. `symbolic links`
+
+## Directories and links
+
+- Directories may contain links to both files and other directories
+- every directory contains at least two entries: .(dot), a link to the directory itself, and ..(dot-dot), which is a link to the above it in the directory hierarchy aka it's parent.
+- Except, the root directory does not have a parent it's .. relates to itself
+
+
+## Symbolic links
+
+- the filename referenced by the symbolic link's pointer is known as it's target
+- A symbolic link will "point" or "refer" to a target file
+- The kernel will automatically resolve a symbolic link used in a system call to it's target
+
+## Filenames
+
+- Normally up to 255 characters long
+- may contain any characters except slashes (\) and null characters (\0)
+- The SUSV3 compliant names may only contain `[-._a-zA-Z0-9]`
+- Do not begin filenames with hyphens
