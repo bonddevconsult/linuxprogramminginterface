@@ -19,7 +19,6 @@ int addition(int a, int b);
 void thisJustPrintsHi(void);
 void multiplyByTwo (int& a, int& b, int& c);
 inline string concatenate (const string& a, const string& b);
-string printName(const string& name = "default");
 long recursiveFactorial(long a);
 
 
@@ -151,8 +150,8 @@ int main()
     int counter = 0;
     while(counter < price ) {
       cout << "Why would you charge so much?\n charge something else next time: ";
+      counter++;
     }
-    counter++;
   }
 
 
@@ -205,10 +204,6 @@ for (char c : madeupString)
   cout << "p1: " << p1 << "p2:" << p2 << "p3" << p3;
 
   cout << concatenate("reallylongstringa","notactuallythatlongnowthatIthinkaboutitstringb") << endl;
-
-  cout << "default username is: ";
-  printName();
-  printName("alan", "bond");
   return 0;
 }
 int addition(int a, int b) {
@@ -242,27 +237,15 @@ inline string concatenate (const string& a, const string& b)
   return a+b;
 }
 
-void printName(const string& name = "default")
-{
-  cout << "HI! \n My Name is: " << name;
-}
-
-// In C++, two different functions can have the same name if their parameters are different; either because they have a different number of parameters, or because any of their parameters are of a different type. For example:
-void printName(const string& firstName, const string& lastName)
-{
-  // 
-  cout << "Howdy, " << firstName << "Or should I call you Dr." << lastName << "?\n";
-}
-
 
 // A recursive function is one that simply calls itself. Recursion therefore is the act of functions calling themselves
 // Some pretty cool properties of recursive functions:
 // 1. By definition, any function written recursively could be rewritten as a while loop.
 // 2. Recursive functions will run infinitely if the exit condition is never reached
-long recursiveFactorial(long a)
-{
-if (a > 1)
-   return (a * factorial (a-1));
-  else
-   return 1;
-}
+// long recursiveFactorial(long a)
+// {
+// if (a > 1)
+//    return (a * factorial (a-1));
+//   else
+//    return 1;
+// }
